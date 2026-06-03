@@ -1,0 +1,41 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-slate-50 font-sans text-slate-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .reveal-up {
+    animation: rise 700ms ease-out forwards;
+  }
+
+  .reveal-up-delay {
+    animation: rise 700ms ease-out forwards;
+    animation-delay: 120ms;
+  }
+}
