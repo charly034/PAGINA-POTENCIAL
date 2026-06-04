@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Header({ links }) {
   const [isOpen, setIsOpen] = useState(false);
+  const logoSrc = `${import.meta.env.BASE_URL}logo_recortado.JPG`;
 
   const closeMenu = () => setIsOpen(false);
 
@@ -10,7 +11,7 @@ function Header({ links }) {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#inicio" className="flex items-center">
           <img
-            src="/logo_recortado.JPG"
+            src={logoSrc}
             alt="Potencial Capital Humano"
             className="h-10 w-auto object-contain sm:h-12 lg:h-16"
           />
