@@ -1,4 +1,4 @@
-function Footer({ links, serviceGroups }) {
+function Footer({ links, serviceGroups, onTrackEvent }) {
   return (
     <footer className="bg-brand-900 text-slate-200">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 sm:py-14 lg:grid-cols-4 lg:px-8">
@@ -48,8 +48,29 @@ function Footer({ links, serviceGroups }) {
           <ul className="mt-3 space-y-2 text-sm text-slate-400">
             <li>
               <a
+                href="https://wa.me/5492617048032?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20de%20RRHH%20para%20mi%20empresa."
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 transition hover:text-coral-400"
+                onClick={() =>
+                  onTrackEvent?.("whatsapp_click", {
+                    location: "footer_direct_channel",
+                  })
+                }
+              >
+                +54 9 261 704 8032
+              </a>
+            </li>
+            <li>
+              <a
                 href="mailto:soluciones@potencialrh.org"
                 className="text-slate-400 transition hover:text-coral-400"
+                onClick={() =>
+                  onTrackEvent?.("contact_click", {
+                    channel: "email",
+                    location: "footer",
+                  })
+                }
               >
                 soluciones@potencialrh.org
               </a>
@@ -60,6 +81,12 @@ function Footer({ links, serviceGroups }) {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-slate-400 transition hover:text-coral-400"
+                onClick={() =>
+                  onTrackEvent?.("social_click", {
+                    network: "instagram",
+                    location: "footer",
+                  })
+                }
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -88,6 +115,12 @@ function Footer({ links, serviceGroups }) {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-slate-400 transition hover:text-coral-400"
+                onClick={() =>
+                  onTrackEvent?.("social_click", {
+                    network: "linkedin",
+                    location: "footer",
+                  })
+                }
               >
                 <svg
                   viewBox="0 0 24 24"

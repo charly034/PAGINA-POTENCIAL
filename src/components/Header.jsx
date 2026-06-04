@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Header({ links }) {
+function Header({ links, onTrackEvent }) {
   const [isOpen, setIsOpen] = useState(false);
   const logoSrc = `${import.meta.env.BASE_URL}logo_recortado.JPG`;
 
@@ -9,7 +9,12 @@ function Header({ links }) {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#inicio" className="flex items-center">
+        <a
+          href="#inicio"
+          className="flex items-center"
+          aria-label="Volver al inicio"
+          onClick={() => onTrackEvent?.("nav_click", { target: "inicio_logo" })}
+        >
           <img
             src={logoSrc}
             alt="Potencial Capital Humano"
@@ -17,6 +22,8 @@ function Header({ links }) {
             loading="eager"
             fetchPriority="high"
             decoding="async"
+            width="200"
+            height="80"
           />
         </a>
 
@@ -29,6 +36,11 @@ function Header({ links }) {
               key={link.href}
               href={link.href}
               className="text-sm font-semibold text-slate-600 transition hover:text-petrol-600"
+              onClick={() =>
+                onTrackEvent?.("nav_click", {
+                  target: link.href.replace("#", ""),
+                })
+              }
             >
               {link.label}
             </a>
@@ -39,6 +51,7 @@ function Header({ links }) {
           <a
             href="#contacto"
             className="rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-petrol-600"
+            onClick={() => onTrackEvent?.("cta_click", { location: "header" })}
           >
             Solicitar diagnóstico
           </a>
@@ -80,6 +93,7 @@ function Header({ links }) {
                   href={link.href}
                   onClick={closeMenu}
                   className="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+                  aria-label={`Ir a ${link.label}`}
                 >
                   {link.label}
                 </a>
@@ -90,6 +104,7 @@ function Header({ links }) {
                 href="#contacto"
                 onClick={closeMenu}
                 className="mt-2 block rounded-xl bg-brand-700 px-3 py-2 text-center text-sm font-semibold text-white"
+                aria-label="Solicitar diagnóstico"
               >
                 Solicitar diagnóstico
               </a>

@@ -3,28 +3,26 @@ import { useMemo, useState } from "react";
 const initialFormState = {
   fullName: "",
   company: "",
-  role: "",
   email: "",
   phone: "",
+  companySize: "",
+  urgency: "",
   service: "",
   message: "",
 };
 
-function ContactForm({ options }) {
+function ContactForm({
+  options,
+  companySizeOptions,
+  urgencyOptions,
+  onTrackEvent,
+}) {
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const requiredFields = useMemo(
-    () => [
-      "fullName",
-      "company",
-      "role",
-      "email",
-      "phone",
-      "service",
-      "message",
-    ],
+    () => ["fullName", "company", "email", "companySize", "urgency", "message"],
     [],
   );
 
@@ -64,6 +62,11 @@ function ContactForm({ options }) {
     setSubmitted(true);
     setErrors({});
     setFormData(initialFormState);
+    onTrackEvent?.("lead_form_submit", {
+      service: formData.service || "no_definido",
+      urgency: formData.urgency,
+      company_size: formData.companySize,
+    });
   };
 
   return (
@@ -85,13 +88,6 @@ function ContactForm({ options }) {
             error={errors.company}
           />
           <Field
-            label="Cargo"
-            name="role"
-            value={formData.role}
-            onChange={handleChange}
-            error={errors.role}
-          />
-          <Field
             label="Email"
             name="email"
             type="email"
@@ -100,7 +96,7 @@ function ContactForm({ options }) {
             error={errors.email}
           />
           <Field
-            label="Teléfono"
+            label="Teléfono (opcional)"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
@@ -108,7 +104,57 @@ function ContactForm({ options }) {
           />
 
           <label className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
-            Servicio de interés
+            Tamaño de empresa
+            <select
+              name="companySize"
+              value={formData.companySize}
+              onChange={handleChange}
+              className={`rounded-xl border px-3 py-2.5 text-sm text-slate-900 outline-none transition ${
+                errors.companySize
+                  ? "border-rose-500 bg-rose-50"
+                  : "border-slate-300 focus:border-brand-500"
+              }`}
+            >
+              <option value="">Seleccioná una opción</option>
+              {companySizeOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {errors.companySize ? (
+              <span className="text-xs text-rose-600">
+                {errors.companySize}
+              </span>
+            ) : null}
+          </label>
+
+          <label className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
+            Nivel de urgencia
+            <select
+              name="urgency"
+              value={formData.urgency}
+              onChange={handleChange}
+              className={`rounded-xl border px-3 py-2.5 text-sm text-slate-900 outline-none transition ${
+                errors.urgency
+                  ? "border-rose-500 bg-rose-50"
+                  : "border-slate-300 focus:border-brand-500"
+              }`}
+            >
+              <option value="">Seleccioná una opción</option>
+              {urgencyOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {errors.urgency ? (
+              <span className="text-xs text-rose-600">{errors.urgency}</span>
+            ) : null}
+          </label>
+
+          <label className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
+            Servicio de interés (opcional)
             <select
               name="service"
               value={formData.service}
@@ -154,6 +200,7 @@ function ContactForm({ options }) {
         <button
           type="submit"
           className="inline-flex items-center justify-center rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-800"
+          aria-label="Enviar formulario de contacto"
         >
           Enviar consulta
         </button>
@@ -173,6 +220,23 @@ function ContactForm({ options }) {
         </p>
         <ul className="mt-5 space-y-3 text-sm">
           <li>
+            WhatsApp:{" "}
+            <a
+              href="https://wa.me/5492617048032?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20de%20RRHH%20para%20mi%20empresa."
+              target="_blank"
+              rel="noreferrer"
+              className="text-accent-300"
+              aria-label="Escribir por WhatsApp al +54 9 261 704 8032"
+              onClick={() =>
+                onTrackEvent?.("whatsapp_click", {
+                  location: "form_direct_channel",
+                })
+              }
+            >
+              +54 9 261 704 8032
+            </a>
+          </li>
+          <li>
             Email:{" "}
             <a
               href="mailto:soluciones@potencialrh.org"
@@ -188,6 +252,13 @@ function ContactForm({ options }) {
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-accent-300"
+              aria-label="Abrir Instagram de Potencial Capital Humano"
+              onClick={() =>
+                onTrackEvent?.("social_click", {
+                  network: "instagram",
+                  location: "form",
+                })
+              }
             >
               <svg
                 viewBox="0 0 24 24"
@@ -217,6 +288,13 @@ function ContactForm({ options }) {
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-accent-300"
+              aria-label="Abrir LinkedIn de Potencial Capital Humano"
+              onClick={() =>
+                onTrackEvent?.("social_click", {
+                  network: "linkedin",
+                  location: "form",
+                })
+              }
             >
               <svg
                 viewBox="0 0 24 24"

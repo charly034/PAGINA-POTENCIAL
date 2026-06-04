@@ -1,9 +1,7 @@
 export const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
-  { label: "Para empresas", href: "#para-empresas" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Búsquedas", href: "#busquedas" },
+  { label: "Casos", href: "#casos" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -28,6 +26,9 @@ export const serviceGroups = [
     title: "Selección y Headhunting",
     description:
       "Procesos de reclutamiento estratégicos orientados a resultados de negocio.",
+    forWho: "Empresas con vacantes críticas o posiciones de liderazgo.",
+    expectedResult:
+      "Contrataciones más rápidas y con mejor ajuste técnico-cultural.",
     items: [
       "Selección de personal end to end",
       "Búsqueda de perfiles clave",
@@ -40,6 +41,9 @@ export const serviceGroups = [
     title: "Desarrollo Organizacional",
     description:
       "Estructuras y procesos de gestión para escalar con orden y claridad.",
+    forWho: "Equipos en crecimiento con problemas de coordinación interna.",
+    expectedResult:
+      "Roles claros, decisiones más ágiles y menor dependencia de la improvisación.",
     items: [
       "Diseño de estructuras eficientes",
       "Organigramas",
@@ -52,6 +56,9 @@ export const serviceGroups = [
     title: "Cultura, Clima y Liderazgo",
     description:
       "Fortalecemos vínculos, liderazgo y bienestar para mejorar desempeño sostenible.",
+    forWho: "Organizaciones con rotación, desgaste o liderazgo en transición.",
+    expectedResult:
+      "Mayor compromiso del equipo y mejora del clima laboral en menos de 90 días.",
     items: [
       "Diagnóstico de clima laboral",
       "Cultura organizacional",
@@ -64,6 +71,9 @@ export const serviceGroups = [
     title: "People Analytics y Compensaciones",
     description:
       "Datos y políticas para decisiones de personas más consistentes y estratégicas.",
+    forWho: "Empresas que necesitan profesionalizar decisiones de RRHH.",
+    expectedResult:
+      "Indicadores accionables y política salarial alineada al mercado.",
     items: [
       "Evaluación de desempeño",
       "Indicadores de RRHH",
@@ -126,6 +136,66 @@ export const activeSearches = [
   },
 ];
 
+export const clientSectors = [
+  "Tecnología y software",
+  "Agroindustria",
+  "Retail y consumo masivo",
+  "Servicios profesionales",
+  "Salud y bienestar",
+  "Logística y operaciones",
+];
+
+export const testimonials = [
+  {
+    quote:
+      "En 8 semanas ordenamos perfiles, reclutamiento y onboarding. Bajó la rotación y mejoró el clima del equipo.",
+    author: "Gerencia General",
+    company: "PyME industrial",
+  },
+  {
+    quote:
+      "Pasamos de procesos improvisados a decisiones con indicadores concretos de desempeño y compensaciones.",
+    author: "Dirección de Operaciones",
+    company: "Empresa de servicios",
+  },
+  {
+    quote:
+      "Nos ayudaron a cubrir posiciones clave con más velocidad y mejor ajuste cultural.",
+    author: "Liderazgo de Talento",
+    company: "Scale-up tecnológica",
+  },
+];
+
+export const caseStudies = [
+  {
+    title: "Escalamiento comercial sin desorden interno",
+    problem:
+      "El equipo comercial creció rápido pero no había claridad de roles ni métricas de desempeño.",
+    solution:
+      "Diseño de estructura, perfiles de puesto, rutinas de liderazgo y tablero de People Analytics.",
+    result:
+      "Reducción del 35% en rotación del área y mayor cumplimiento de objetivos trimestrales.",
+  },
+  {
+    title: "Selección estratégica para posiciones críticas",
+    problem:
+      "La empresa tardaba demasiado en cubrir vacantes clave y perdía oportunidades de negocio.",
+    solution:
+      "Proceso de headhunting con entrevistas por competencias y evaluación de ajuste cultural.",
+    result:
+      "Cobertura de vacantes críticas en menor tiempo y con mayor permanencia del talento.",
+  },
+  {
+    title: "Cultura y liderazgo en etapa de expansión",
+    problem:
+      "Había desgaste del equipo y líderes sin herramientas para acompañar el crecimiento.",
+    solution:
+      "Programa de liderazgo, diagnóstico de clima y plan de mejora por equipos.",
+    result:
+      "Mejora sostenida en clima laboral y aumento del compromiso interno.",
+  },
+];
+
 // Editable impact metrics for quick future updates.
 export const impactMetrics = [
   { value: "+10", label: "años de experiencia combinada" },
@@ -142,4 +212,18 @@ export const serviceInterestOptions = [
   "Evaluación de desempeño",
   "People Analytics",
   "Otro",
+];
+
+export const companySizeOptions = [
+  "1 a 10 personas",
+  "11 a 30 personas",
+  "31 a 80 personas",
+  "81 a 200 personas",
+  "Más de 200 personas",
+];
+
+export const urgencyOptions = [
+  "Alta (necesitamos resolverlo este mes)",
+  "Media (en los próximos 2-3 meses)",
+  "Planificada (este semestre)",
 ];

@@ -22,9 +22,24 @@
     @apply min-h-screen;
   }
 
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #0f766e;
+    outline-offset: 2px;
+  }
+
   main > section {
     content-visibility: auto;
     contain-intrinsic-size: 1px 900px;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding-bottom: 5.5rem;
+    }
   }
 }
 
@@ -40,5 +55,14 @@
   .reveal-up-delay {
     animation: rise 700ms ease-out forwards;
     animation-delay: 120ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
