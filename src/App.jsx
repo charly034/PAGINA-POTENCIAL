@@ -14,6 +14,7 @@ import {
 } from "./data/content";
 
 const serviceSymbols = ["SP", "DO", "CL", "PA"];
+const brandImageSrc = `${import.meta.env.BASE_URL}logo_con_frase.jpg`;
 
 function App() {
   return (
@@ -291,9 +292,11 @@ function App() {
 
             <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-soft">
               <img
-                src="/logo_con_frase.jpg"
+                src={brandImageSrc}
                 alt="Potencial Capital Humano - Acompañamos a las organizaciones a potenciar su activo más valioso: las personas"
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

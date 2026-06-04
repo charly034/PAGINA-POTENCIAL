@@ -14,6 +14,9 @@ function Header({ links }) {
             src={logoSrc}
             alt="Potencial Capital Humano"
             className="h-10 w-auto object-contain sm:h-12 lg:h-16"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </a>
 
