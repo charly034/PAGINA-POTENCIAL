@@ -54,8 +54,52 @@ function Footer({ links, serviceGroups }) {
                 soluciones@potencialrh.org
               </a>
             </li>
-            <li>@potencialcapitalhumano</li>
-            <li>Potencial Capital Humano</li>
+            <li>
+              <a
+                href="https://www.instagram.com/potencialcapitalhumano/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-slate-400 transition hover:text-coral-400"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+                @potencialcapitalhumano
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/potencial-capital-humano"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-slate-400 transition hover:text-coral-400"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M6.94 8.5a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM5.6 9.75h2.67V18H5.6V9.75Zm4.34 0h2.56v1.13h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.78 3.2 4.1V18H15.6v-3.91c0-.93-.02-2.13-1.3-2.13-1.3 0-1.5 1.01-1.5 2.06V18H9.94V9.75Z" />
+                </svg>
+                Potencial Capital Humano
+              </a>
+            </li>
           </ul>
         </div>
       </div>
