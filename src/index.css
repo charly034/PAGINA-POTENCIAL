@@ -1,20 +1,18 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 72px;
   }
 
   body {
-    @apply m-0 bg-slate-50 font-sans text-slate-700 antialiased;
+    @apply m-0 bg-white font-sans text-slate-700 antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     @apply font-display;
   }
 
@@ -22,9 +20,18 @@
     @apply min-h-screen;
   }
 
+  /* Espacio inferior en mobile para el CTA sticky */
+  main {
+    @apply pb-20 sm:pb-0;
+  }
+
   main > section {
     content-visibility: auto;
     contain-intrinsic-size: 1px 900px;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-petrol-500;
   }
 }
 
@@ -34,11 +41,11 @@
   }
 
   .reveal-up {
-    animation: rise 700ms ease-out forwards;
+    animation: rise 700ms ease-out both;
   }
 
   .reveal-up-delay {
-    animation: rise 700ms ease-out forwards;
-    animation-delay: 120ms;
+    animation: rise 700ms ease-out both;
+    animation-delay: 150ms;
   }
 }

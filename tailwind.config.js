@@ -19,6 +19,7 @@ export default {
         },
         // Secundario: Teal/petróleo (mapa LATAM)
         petrol: {
+          50: "#eef8f9",
           100: "#c6e8eb",
           200: "#97d2d8",
           300: "#5eb6bf",

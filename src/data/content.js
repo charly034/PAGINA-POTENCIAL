@@ -1,10 +1,11 @@
+export const WHATSAPP_URL = "https://wa.me/5492617048032";
+
 export const navLinks = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Para empresas", href: "#para-empresas" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Búsquedas", href: "#busquedas" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Cómo trabajamos", href: "#proceso" },
+  { label: "Casos de éxito", href: "#testimonios" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -61,7 +62,7 @@ export const serviceGroups = [
     ],
   },
   {
-    title: "People Analytics y Compensaciones",
+    title: "People Analítica y Compensaciones",
     description:
       "Datos y políticas para decisiones de personas más consistentes y estratégicas.",
     items: [
@@ -126,12 +127,59 @@ export const activeSearches = [
   },
 ];
 
-// Editable impact metrics for quick future updates.
 export const impactMetrics = [
-  { value: "+10", label: "años de experiencia combinada" },
-  { value: "Procesos", label: "de selección estratégicos" },
-  { value: "Empresas", label: "acompañadas en crecimiento" },
-  { value: "LATAM", label: "presencia regional" },
+  { value: "+15", label: "años de experiencia combinada" },
+  { value: "+70", label: "empresas acompañadas" },
+  { value: "+10", label: "servicios profesionales de Capital Humano" },
+  { value: "LATAM + Europa", label: "presencia global" },
+];
+
+export const teamMembers = [
+  {
+    name: "Valentín Coronado",
+    role: "Lic. en RRHH · Business Coach · MBA",
+    photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUCp5U-Rn0St01bv9dMBgvK04oMWip2AdsdjEhtvYpvnVrGBTLRd2R9RVkCskB17F4-19ZkeGVpHjos8mJXQwO_DVxmpQpbPjov7WB0c5k6qztMoMlSH_bI7TICTjzcluIWThZRAFvvW3IGE77I423YcaMCIHy1HTobZevz5nQXkCrIEK6W1bd5Ko25-J8kNp9aT6E-1X0yNnczfCRpLAS0mksVGbQOVst9b68RHF1s=w1280",
+  },
+  {
+    name: "Belén Mesa",
+    role: "Lic. en Psicología · Especialista en RRHH · MBA · Docente",
+    photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUDBkBO-iRbg5z1lpg9UFoqa1kyi50gCoJ0-pD38IlEYgL_7yH4bn_T06BHS2ftWUSgjaq2285_1Cup5fEmvDb0UcZ8qoCDQ3E8Y7WPp1PF1QQfR2-_dj3qBYKxP9zi6avxYBqooWBi1DNCDHsJcVG9QHRHa-2Hqfcufrc6ek80dE82Eu4fb3_4Kq1WB9HAxrqLMxVM9PaUSjYbee6cCXus8kcFVoAiO0Rx2EjFF9uY=w1280",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Transformaron la forma en que gestionamos nuestro equipo. Los procesos de selección ahora son más ágiles y certeros.",
+    author: "Gerente de RRHH",
+    company: "Sector tecnológico",
+    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio1.jpg`,
+    photo: null,
+  },
+  {
+    quote:
+      "Nos ayudaron a ordenar la estructura interna en un momento de crecimiento acelerado. El resultado superó nuestras expectativas.",
+    author: "Director General",
+    company: "Sector servicios",
+    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio2.jpg`,
+    photo: null,
+  },
+  {
+    quote:
+      "El diagnóstico de clima laboral fue muy preciso. Las acciones que implementamos mejoraron notablemente la retención del talento.",
+    author: "CEO",
+    company: "Sector industrial",
+    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio3.jpg`,
+    photo: null,
+  },
+  {
+    quote:
+      "Gracias a su acompañamiento pudimos definir perfiles claros y armar un equipo de liderazgo sólido para escalar el negocio.",
+    author: "Fundadora",
+    company: "Startup de servicios B2B",
+    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio4.jpg`,
+    photo: null,
+  },
 ];
 
 export const serviceInterestOptions = [
@@ -140,6 +188,20 @@ export const serviceInterestOptions = [
   "Desarrollo organizacional",
   "Clima laboral",
   "Evaluación de desempeño",
-  "People Analytics",
+  "People Analítica",
   "Otro",
+];
+
+export const companySizeOptions = [
+  "1–10 empleados",
+  "11–50 empleados",
+  "51–200 empleados",
+  "+200 empleados",
+];
+
+export const urgencyOptions = [
+  "Inmediata (esta semana)",
+  "Próximo mes",
+  "En los próximos 3 meses",
+  "Estoy explorando opciones",
 ];
