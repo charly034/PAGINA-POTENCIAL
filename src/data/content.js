@@ -138,48 +138,37 @@ export const teamMembers = [
   {
     name: "Valentín Coronado",
     role: "Lic. en RRHH · Business Coach · MBA",
-    photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUCp5U-Rn0St01bv9dMBgvK04oMWip2AdsdjEhtvYpvnVrGBTLRd2R9RVkCskB17F4-19ZkeGVpHjos8mJXQwO_DVxmpQpbPjov7WB0c5k6qztMoMlSH_bI7TICTjzcluIWThZRAFvvW3IGE77I423YcaMCIHy1HTobZevz5nQXkCrIEK6W1bd5Ko25-J8kNp9aT6E-1X0yNnczfCRpLAS0mksVGbQOVst9b68RHF1s=w1280",
+    photo: `${import.meta.env.BASE_URL}team/valentin.jpg`,
   },
   {
     name: "Belén Mesa",
     role: "Lic. en Psicología · Especialista en RRHH · MBA · Docente",
-    photo: "https://lh3.googleusercontent.com/sitesv/AA5AbUDBkBO-iRbg5z1lpg9UFoqa1kyi50gCoJ0-pD38IlEYgL_7yH4bn_T06BHS2ftWUSgjaq2285_1Cup5fEmvDb0UcZ8qoCDQ3E8Y7WPp1PF1QQfR2-_dj3qBYKxP9zi6avxYBqooWBi1DNCDHsJcVG9QHRHa-2Hqfcufrc6ek80dE82Eu4fb3_4Kq1WB9HAxrqLMxVM9PaUSjYbee6cCXus8kcFVoAiO0Rx2EjFF9uY=w1280",
+    photo: `${import.meta.env.BASE_URL}team/belen.jpg`,
   },
 ];
 
 export const testimonials = [
   {
-    quote:
-      "Transformaron la forma en que gestionamos nuestro equipo. Los procesos de selección ahora son más ágiles y certeros.",
-    author: "Gerente de RRHH",
-    company: "Sector tecnológico",
-    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio1.jpg`,
-    photo: null,
+    company: "Empresa de transporte",
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio1.png`,
   },
   {
-    quote:
-      "Nos ayudaron a ordenar la estructura interna en un momento de crecimiento acelerado. El resultado superó nuestras expectativas.",
-    author: "Director General",
-    company: "Sector servicios",
-    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio2.jpg`,
-    photo: null,
+    company: "Empresa de software",
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio2.png`,
   },
   {
-    quote:
-      "El diagnóstico de clima laboral fue muy preciso. Las acciones que implementamos mejoraron notablemente la retención del talento.",
-    author: "CEO",
-    company: "Sector industrial",
-    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio3.jpg`,
-    photo: null,
+    company: "Empresa mayorista de insumos de ferretería",
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio3.png`,
   },
-  {
-    quote:
-      "Gracias a su acompañamiento pudimos definir perfiles claros y armar un equipo de liderazgo sólido para escalar el negocio.",
-    author: "Fundadora",
-    company: "Startup de servicios B2B",
-    // photo: `${import.meta.env.BASE_URL}testimonios/testimonio4.jpg`,
-    photo: null,
-  },
+];
+
+export const clientLogos = [
+  { name: "Zeus Impresiones", logo: `${import.meta.env.BASE_URL}logos/zeus.png` },
+  { name: "El Depósito", logo: `${import.meta.env.BASE_URL}logos/eldeposito.png` },
+  { name: "Katsuda", logo: `${import.meta.env.BASE_URL}logos/katsuda.png` },
+  { name: "Pyramis", logo: `${import.meta.env.BASE_URL}logos/pyramis.png` },
+  { name: "EPRE", logo: `${import.meta.env.BASE_URL}logos/epre.png` },
+  { name: "Griffouliere Transportes", logo: `${import.meta.env.BASE_URL}logos/griffouliere.png` },
 ];
 
 export const serviceInterestOptions = [

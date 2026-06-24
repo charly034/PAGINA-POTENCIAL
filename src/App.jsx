@@ -1,3 +1,5 @@
+import { useState } from "react";
+import ClientLogos from "./components/ClientLogos";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,6 +9,7 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 import {
   WHATSAPP_URL,
   activeSearches,
+  clientLogos,
   companyPainPoints,
   impactMetrics,
   navLinks,
@@ -36,6 +39,7 @@ function WhatsAppIcon() {
 }
 
 function App() {
+  const [painExpanded, setPainExpanded] = useState(false);
   return (
     <>
       <Header links={navLinks} />
@@ -112,124 +116,9 @@ function App() {
           </div>
         </section>
 
-        {/* ── NOSOTROS ── */}
-        <section
-          className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24"
-          id="nosotros"
-        >
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              label="Nuestro equipo"
-              title="Sobre Potencial Capital Humano"
-              subtitle="Somos una agencia especializada en Recursos Humanos, selección de personal y desarrollo organizacional. Acompañamos a empresas a construir equipos más claros, saludables y preparados para crecer."
-            />
-
-            <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
-              <TeamCarousel members={teamMembers} />
-
-              <div className="flex flex-col justify-center gap-6">
-                <blockquote className="border-l-4 border-coral-500 pl-5 text-xl font-semibold italic leading-relaxed text-slate-800">
-                  "Creemos que el talento correcto, en el lugar correcto, puede
-                  transformar una organización."
-                </blockquote>
-                <p className="text-base leading-relaxed text-slate-600">
-                  Con más de 15 años de experiencia combinada en RRHH, nuestro
-                  equipo acompaña a empresas de Argentina y Latinoamérica a
-                  tomar mejores decisiones sobre su capital humano.
-                </p>
-
-                {/* Métricas inline */}
-                <div className="mt-2 grid grid-cols-2 gap-4">
-                  {impactMetrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="rounded-2xl border border-slate-100 bg-slate-50 p-4"
-                    >
-                      <p className="text-2xl font-bold text-petrol-600">{metric.value}</p>
-                      <p className="mt-1 text-xs leading-snug text-slate-500">{metric.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── VALOR ── */}
-        <section
-          className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20 lg:py-24"
-          id="valor"
-        >
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              label="¿Por qué elegirnos?"
-              title="RRHH estratégico para empresas que quieren crecer"
-              subtitle="Combinamos selección estratégica, desarrollo organizacional, cultura, liderazgo y People Analítica para tomar mejores decisiones sobre las personas."
-              align="center"
-            />
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-3">
-              {valueCards.map((card, i) => (
-                <article
-                  key={card.title}
-                  className="card-hover group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6"
-                >
-                  <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-lg font-bold text-brand-700">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-lg font-bold text-slate-900">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
-                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-brand-700 to-petrol-600 transition-all duration-500 group-hover:w-full" />
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── SERVICIOS ── */}
-        <section
-          className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24"
-          id="servicios"
-        >
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <SectionHeading
-              label="Lo que hacemos"
-              title="Servicios"
-              subtitle="Soluciones de Recursos Humanos para cada etapa de crecimiento de tu empresa."
-            />
-
-            <div className="mt-12 grid gap-5 lg:grid-cols-2">
-              {serviceGroups.map((group, index) => (
-                <article
-                  key={group.title}
-                  className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xs font-bold ${serviceColors[index]}`}>
-                      {serviceSymbols[index]}
-                    </span>
-                    <div className="min-w-0">
-                      <h3 className="text-lg font-bold text-slate-900">{group.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-500">{group.description}</p>
-                    </div>
-                  </div>
-                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral-500" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── PARA EMPRESAS ── */}
         <section
-          className="border-b border-slate-200 bg-brand-900 py-16 sm:py-20 lg:py-24"
+          className="border-b border-slate-200 bg-brand-900 py-10 sm:py-20 lg:py-24"
           id="para-empresas"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -241,16 +130,22 @@ function App() {
             />
 
             <ul className="mt-10 grid gap-3 sm:grid-cols-2">
-              {companyPainPoints.map((issue) => (
+              {companyPainPoints.map((issue, i) => (
                 <li
                   key={issue}
-                  className="flex items-start gap-3 rounded-xl border border-brand-700 bg-brand-800/60 px-5 py-4 text-sm text-slate-200"
+                  className={`flex items-start gap-3 rounded-xl border border-brand-700 bg-brand-800/60 px-5 py-4 text-sm text-slate-200 ${i >= 4 && !painExpanded ? "hidden sm:flex" : "flex"}`}
                 >
                   <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-coral-500/20 text-center text-xs leading-5 text-coral-400">✓</span>
                   {issue}
                 </li>
               ))}
             </ul>
+            <button
+              onClick={() => setPainExpanded((p) => !p)}
+              className="mt-4 text-sm font-semibold text-coral-400 underline-offset-2 hover:underline sm:hidden"
+            >
+              {painExpanded ? "Ver menos ↑" : "Ver todos ↓"}
+            </button>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#contacto"
@@ -271,24 +166,150 @@ function App() {
           </div>
         </section>
 
+        {/* ── NOSOTROS ── */}
+        <section
+          className="border-b border-slate-200 bg-white py-10 sm:py-20 lg:py-24"
+          id="nosotros"
+        >
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              label="Nuestro equipo"
+              title="Sobre Potencial Capital Humano"
+              subtitle="Somos una agencia especializada en Recursos Humanos, selección de personal y desarrollo organizacional. Acompañamos a empresas a construir equipos más claros, saludables y preparados para crecer."
+            />
+
+            <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
+              <TeamCarousel members={teamMembers} />
+
+              <div className="flex flex-col justify-center gap-5">
+                <blockquote className="border-l-4 border-coral-500 pl-5 text-lg font-semibold italic leading-relaxed text-slate-800 sm:text-xl">
+                  "Creemos que el talento correcto, en el lugar correcto, puede
+                  transformar una organización."
+                </blockquote>
+                <p className="hidden text-base leading-relaxed text-slate-600 sm:block">
+                  Con más de 15 años de experiencia combinada en RRHH, nuestro
+                  equipo acompaña a empresas de Argentina y Latinoamérica a
+                  tomar mejores decisiones sobre su capital humano.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {impactMetrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="rounded-xl border border-slate-100 bg-slate-50 p-3 sm:p-4"
+                    >
+                      <p className="text-xl font-bold text-petrol-600 sm:text-2xl">{metric.value}</p>
+                      <p className="mt-0.5 text-xs leading-snug text-slate-500">{metric.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SERVICIOS ── */}
+        <section
+          className="border-b border-slate-200 bg-slate-50 py-10 sm:py-20 lg:py-24"
+          id="servicios"
+        >
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              label="Lo que hacemos"
+              title="Servicios"
+              subtitle="Soluciones de Recursos Humanos para cada etapa de crecimiento de tu empresa."
+            />
+
+            <div className="mt-12 grid gap-5 lg:grid-cols-2">
+              {serviceGroups.map((group, index) => (
+                <article
+                  key={group.title}
+                  className="card-hover rounded-2xl border border-slate-200 bg-white p-6 sm:p-7"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xs font-bold ${serviceColors[index]}`}>
+                      {serviceSymbols[index]}
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="text-lg font-bold text-slate-900">{group.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-500">{group.description}</p>
+                    </div>
+                  </div>
+                  <ul className="mt-5 hidden grid-cols-2 gap-2 sm:grid">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral-500" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── VALOR ── */}
+        <section
+          className="border-b border-slate-200 bg-white py-10 sm:py-20 lg:py-24"
+          id="valor"
+        >
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              label="¿Por qué elegirnos?"
+              title="RRHH estratégico para empresas que quieren crecer"
+              subtitle="Combinamos selección estratégica, desarrollo organizacional, cultura, liderazgo y People Analítica para tomar mejores decisiones sobre las personas."
+              align="center"
+            />
+
+            {/* Mobile: lista compacta */}
+            <ul className="mt-8 space-y-3 sm:hidden">
+              {valueCards.map((card, i) => (
+                <li key={card.title} className="flex items-start gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-100 text-sm font-bold text-brand-700">{i + 1}</span>
+                  <div>
+                    <p className="font-semibold text-slate-900">{card.title}</p>
+                    <p className="text-sm text-slate-500">{card.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            {/* Desktop: cards */}
+            <div className="mt-12 hidden grid-cols-3 gap-5 sm:grid">
+              {valueCards.map((card, i) => (
+                <article
+                  key={card.title}
+                  className="card-hover group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6"
+                >
+                  <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-lg font-bold text-brand-700">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-900">{card.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-brand-700 to-petrol-600 transition-all duration-500 group-hover:w-full" />
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CÓMO TRABAJAMOS ── */}
         <section
-          className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20 lg:py-24"
+          className="border-b border-slate-200 bg-slate-50 py-10 sm:py-20 lg:py-24"
           id="proceso"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <SectionHeading label="Nuestro proceso" title="Cómo trabajamos" align="center" />
 
-            {/* Mobile y tablet: lista vertical */}
-            <div className="mt-10 lg:hidden">
-              <ol className="space-y-6 border-l-2 border-brand-200 pl-6">
+            {/* Mobile: solo títulos numerados */}
+            <div className="mt-8 lg:hidden">
+              <ol className="space-y-3 border-l-2 border-brand-200 pl-6">
                 {processSteps.map((step, index) => (
                   <li key={step.title} className="relative">
-                    <span className="absolute -left-[33px] top-0 flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-bold text-white ring-4 ring-slate-50">
+                    <span className="absolute -left-[33px] top-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-brand-700 text-xs font-bold text-white ring-4 ring-slate-50">
                       {index + 1}
                     </span>
-                    <h3 className="text-base font-bold text-slate-900">{step.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{step.text}</p>
+                    <h3 className="text-sm font-bold text-slate-900">{step.title}</h3>
+                    <p className="mt-0.5 text-xs leading-relaxed text-slate-500 sm:block">{step.text}</p>
                   </li>
                 ))}
               </ol>
@@ -317,7 +338,7 @@ function App() {
 
         {/* ── CASOS DE ÉXITO ── */}
         <section
-          className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24"
+          className="border-b border-slate-200 bg-white py-10 sm:py-20 lg:py-24"
           id="testimonios"
         >
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -333,8 +354,18 @@ function App() {
           </div>
         </section>
 
+        {/* ── EMPRESAS QUE CONFIARON ── */}
+        <section className="border-b border-slate-100 bg-slate-50 py-10 sm:py-12">
+          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
+              Empresas que ya confían en nosotros
+            </p>
+            <ClientLogos logos={clientLogos} />
+          </div>
+        </section>
+
         {/* ── CONTACTO ── */}
-        <section className="bg-slate-50 py-16 sm:py-20 lg:py-24" id="contacto">
+        <section className="bg-slate-50 py-10 sm:py-20 lg:py-24" id="contacto">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               label="Contacto"
