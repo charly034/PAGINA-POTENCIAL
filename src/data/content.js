@@ -138,37 +138,37 @@ export const teamMembers = [
   {
     name: "Valentín Coronado",
     role: "Lic. en RRHH · Business Coach · MBA",
-    photo: `${import.meta.env.BASE_URL}team/valentin.jpg`,
+    photo: `${import.meta.env.BASE_URL}team/valentin.webp`,
   },
   {
     name: "Belén Mesa",
     role: "Lic. en Psicología · Especialista en RRHH · MBA · Docente",
-    photo: `${import.meta.env.BASE_URL}team/belen.jpg`,
+    photo: `${import.meta.env.BASE_URL}team/belen.webp`,
   },
 ];
 
 export const testimonials = [
   {
     company: "Empresa de transporte",
-    photo: `${import.meta.env.BASE_URL}testimonios/testimonio1.png`,
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio1.webp`,
   },
   {
     company: "Empresa de software",
-    photo: `${import.meta.env.BASE_URL}testimonios/testimonio2.png`,
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio2.webp`,
   },
   {
     company: "Empresa mayorista de insumos de ferretería",
-    photo: `${import.meta.env.BASE_URL}testimonios/testimonio3.png`,
+    photo: `${import.meta.env.BASE_URL}testimonios/testimonio3.webp`,
   },
 ];
 
 export const clientLogos = [
-  { name: "Zeus Impresiones", logo: `${import.meta.env.BASE_URL}logos/zeus.png` },
-  { name: "El Depósito", logo: `${import.meta.env.BASE_URL}logos/eldeposito.png` },
-  { name: "Katsuda", logo: `${import.meta.env.BASE_URL}logos/katsuda.png` },
-  { name: "Pyramis", logo: `${import.meta.env.BASE_URL}logos/pyramis.png` },
-  { name: "EPRE", logo: `${import.meta.env.BASE_URL}logos/epre.png` },
-  { name: "Griffouliere Transportes", logo: `${import.meta.env.BASE_URL}logos/griffouliere.png` },
+  { name: "Zeus Impresiones", logo: `${import.meta.env.BASE_URL}logos/zeus.webp` },
+  { name: "El Depósito", logo: `${import.meta.env.BASE_URL}logos/eldeposito.webp` },
+  { name: "Katsuda", logo: `${import.meta.env.BASE_URL}logos/katsuda.webp` },
+  { name: "Pyramis", logo: `${import.meta.env.BASE_URL}logos/pyramis.webp` },
+  { name: "EPRE", logo: `${import.meta.env.BASE_URL}logos/epre.webp` },
+  { name: "Griffouliere Transportes", logo: `${import.meta.env.BASE_URL}logos/griffouliere.webp` },
 ];
 
 export const serviceInterestOptions = [

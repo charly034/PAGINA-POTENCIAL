@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function Header({ links }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const logoSrc = `${import.meta.env.BASE_URL}logo_recortado.JPG`;
+  const logoSrc = `${import.meta.env.BASE_URL}logo_recortado.webp`;
 
   const closeMenu = () => setIsOpen(false);
 
